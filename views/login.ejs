@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<meta charset="utf-8">    
+<title>My app</title>    
+    </head>
+<body>
+    
+    <div class="container">
+        <nav class="navbar navbar-default navbar-static-top">
+   <ul class="nav nav-tabs pull-right">
+<li  role="presentation" ><a class="navbar-brand" href="index.ejs"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </li>   
+   <li role="presentation" ><a class="navbar-brand"href="login.ejs">Login</a></li> 
+    <li role="presentation" ><a class="navbar-brand"href="about.ejs">About</a></li>
+   <li role="presentation" > <a class="navbar-brand" href="contact.ejs">Contact</a></li>
+        </ul>
+         
+    </nav>
+    <h1> Sign Up</h1>
+    <form id="form1" name="form1" method="post" action="getData">
+  <p>
+  <label>Please Fill up the form and submit it
+  </label>.<br />
+      <label>Username
+  <input type="text" name="name" id="name" placeholder="Please Input Name" />
+    </label>
+  </p>
+        
+  <p>
+    <label>Age
+        <input type="number" name="age" value="25" id="age" placeholder="Please Input Age" />
+    </label>
+  </p>
+        <p>
+            <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="pwd" id="pd" placeholder="**********" />
+        </div>
+  </p>
+  <p>
+    <label>
+      <input type="submit" class="btn btn-default"  name="submit" id="submit" action="/uploaded" value="Submit" />
+    </label>
+  </p>
+</form>
+    <br>
+    
+    
+    
+    
+    <h1> Login </h1>
+     <form id="form2" name="form2" method="post" action="getData1">
+    <p>
+    <label>
+    Username <input type="text" name="uname" id="uname" placeholder="Username" act />
+    </label>
+    </p>
+    <p>
+    <label>
+    password <input type="password" name="pwd" id="apwd" placeholder="password" />
+    </label>
+    </p>
+    
+    <p>
+    <label>
+      <input type="button"  class="btn btn-primary" name="login" id="login" action="/uploaded" value="login" />
+    </label>
+  </p>
+    </form>
+   </div>
+    </body>
+</html>

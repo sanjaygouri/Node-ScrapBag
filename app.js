@@ -85,7 +85,39 @@ con.end(function(err) {
 });
 
 });
+app.post('/Fu',function(req,res,next){
 
+var username = req.body.uname;
+var password = req.body.pwd;
+  
+ con.query('SELECT name FROM fuck WHERE name = "' + username +'" ',function(err, result,fields) {
+    
+    
+
+   if (result.length > 0) {
+       
+       var w = result[0].name;
+     //  var q = result[1].password;
+       //console.log(q);
+       
+
+       if( username == w){
+       
+       console.log('Login was successful');
+       
+       }
+           
+        } 
+     
+     else {
+            console.log('Login was not successful');
+        }
+  
+ });
+    
+ res.send("success1");
+    
+});
 
 app.get('/about',function(req,res){
 res.render('about');

@@ -88,32 +88,24 @@ con.end(function(err) {
 app.post('/Fu',function(req,res,next){
 
 var username = req.body.uname;
-var password = req.body.pwd;
+var pass = req.body.pwd;
   
- con.query('SELECT name FROM fuck WHERE name = "' + username +'" ',function(err, result,fields) {
+ con.query(' SELECT name FROM fuck WHERE name = "' +username+'"; SELECT password FROM fuck WHERE password = "' +pass+'" ',function(err, results,fields) {
     
+    if(results.length > 0){
     
-
-   if (result.length > 0) {
-       
-       var w = result[0].name;
-     //  var q = result[1].password;
-       //console.log(q);
-       
-
-       if( username == w){
-       
-       console.log('Login was successful');
-       
-       }
-           
-        } 
-     
-     else {
-            console.log('Login was not successful');
-        }
-  
- });
+    var w = results[0][0].name;
+    var q = results[1][0].password;
+    
+  if(username == w && pass== q){  
+    console.log(" login was  successful");
+    
+    }
+  }
+     else{
+     console.log("login was not successful");
+     }
+    });
     
  res.send("success1");
     
